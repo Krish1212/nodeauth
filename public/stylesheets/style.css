@@ -4,6 +4,9 @@ body {
 }
 
 footer{
+  position:fixed;
+  bottom:0;
+  width:100%;
   background:#f4f4f4;
   height:40px;
   text-align:center;

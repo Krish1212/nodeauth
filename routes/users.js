@@ -99,8 +99,8 @@ passport.use(new LocalStrategy(
         console.log('Unknown User');
         return done(null, false, {message:'Unknown User'});
       }
-      User.comparePassword(password,user.password,function(err,isMatch){
-        if (err) throw err;
+      User.comparePassword(password,user.password,function(isMatch){
+        //if (err) throw err;
         if (isMatch){
           return done(null, user);
         } else {

@@ -46,18 +46,11 @@ module.exports.comparePassword = function(userpassword,dbpassword,callback){
     var salt = dbpassword.split('$')[2];
     var hashedPassword = hash(userpassword,salt);
     var isMatch = false;
-    var err;
-    try {
-        if (userpassword === hashedPassword) {
-            console.log('Valid password');
-            isMatch = true;
-            return callback(null,isMatch);
-        }
-    } catch (error) {
-        console.log(error);
-        err = error;
+    if (dbpassword === hashedPassword) {
+        console.log('Valid password');
+        isMatch = true;
     }
-    if (err) callback(err,isMatch);
+    return callback(isMatch);
 };
 
 module.exports.createUser = function(newUser,callback){
