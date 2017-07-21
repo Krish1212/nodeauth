@@ -72,6 +72,12 @@ app.use(function(req,res,next){
   next();
 })
 
+//Create local variable to be used in all the other routes
+app.get('*',function(req,res,next){
+  res.locals.user = req.user;
+  next();
+});
+
 app.use('/', index);
 app.use('/users', users);
 

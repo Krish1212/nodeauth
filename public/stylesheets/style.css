@@ -14,3 +14,26 @@ footer{
   padding-top:10px;
   overflow:auto;
 }
+
+.success li, .info li, .error li{
+  width:auto;
+  height:30px;
+  margin-top:10px;
+  padding:5px;
+  list-style: none;
+  text-align: center;
+  font-weight: bold;
+}
+.success li{
+  background-color:#ADDFAD;
+  border: 1px solid #32CD32;
+}
+.info li{
+  background-color:#FFF0F5;
+  border: 1px solid #882D17;
+}
+.error li{
+  background-color:#CD5C5C;
+  border: 1px solid #ED2939;
+  color:white;
+}

@@ -118,6 +118,13 @@ router.post('/login',passport.authenticate('local',{failureRedirect:'/users/logi
   console.log('Authentication Successfull');
   req.flash('success','You are now logged in');
   res.redirect('/');
+});
+
+//Logout router
+router.get('/logout',function(req,res,next){
+  req.logout();
+  req.flash('success','You have logged out successfully');
+  res.redirect('/users/login');
 })
 
 module.exports = router;
